@@ -77,8 +77,21 @@ export class UserService {
       }
     }
    }
-   findUserById(findDto:IFindId){
-    console.log(findDto)
+   async findUserById(userIdd:string){
+    // const {userId}=userIdd
+    console.log(userId)
+    const user=await this.userModel.findOne({_id:userId})
+    if(!user){
+      return {
+        status:HttpStatus.NOT_FOUND,
+        error:true,
+        message:"user account not found!"
+      }
+    }
+    console.log(user)
+    return{
+      data:user
+    }
    }
  
 }

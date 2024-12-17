@@ -17,9 +17,9 @@ export class UserController {
     return this.userService.login(loginDto)
   }
 
-  @MessagePattern("find_by_id")
-  findUserById(findDto:IFindId){
-    return this.userService.findUserById(findDto)
+  @MessagePattern("get_user_by_id")
+  findUserById(userId:string){
+    return this.userService.findUserById(userId)
   }
  
 }
