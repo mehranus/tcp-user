@@ -77,9 +77,7 @@ export class UserService {
       }
     }
    }
-   async findUserById(userIdd:string){
-    // const {userId}=userIdd
-    console.log(userId)
+   async findUserById(userId:string){
     const user=await this.userModel.findOne({_id:userId})
     if(!user){
       return {
@@ -88,9 +86,9 @@ export class UserService {
         message:"user account not found!"
       }
     }
-    console.log(user)
+ 
     return{
-      data:user
+      data:{user}
     }
    }
  

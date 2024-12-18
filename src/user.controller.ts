@@ -18,7 +18,7 @@ export class UserController {
   }
 
   @MessagePattern("get_user_by_id")
-  findUserById(userId:string){
+  findUserById({userId}:{userId:string}){
     return this.userService.findUserById(userId)
   }
  
