@@ -12,6 +12,7 @@ async function bootstrap() {
    }
   } as TcpOptions)
   await app.listen();
+  
   console.log("user run in port:4001")
 }
 bootstrap();
